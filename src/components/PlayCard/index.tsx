@@ -8,7 +8,7 @@ import {
 
 import Colors from '../../config/Colors';
 
-const PlayCard = () => {
+const PlayCard: React.FC = () => {
   return (
     <TouchableOpacity style={styles.container}>
       <Text>Hello Lets Play</Text>
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     height: hp(24),
     width: hp(24),
     backgroundColor: Colors.blue2,
-    borderWidth: wp(1),
+    borderWidth: wp(0.5),
     borderRadius: wp(3),
     borderColor: Colors.light4,
   },

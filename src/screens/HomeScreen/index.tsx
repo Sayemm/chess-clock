@@ -1,15 +1,22 @@
+/* eslint-disable react-native/no-inline-styles */
 import React from 'react';
 import {StyleSheet, View} from 'react-native';
 
-import {PlayCard} from '../../components';
+import {CustomButton, PlayCard} from '../../components';
 import Colors from '../../config/Colors';
 import Padding from '../../config/Padding';
 
 const index = () => {
   return (
     <View style={styles.container}>
-      <PlayCard />
-      <PlayCard />
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <PlayCard />
+        <PlayCard />
+      </View>
+      <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
+        <CustomButton buttonTitle="CUSTOM" />
+        <CustomButton buttonTitle="EXIT" />
+      </View>
     </View>
   );
 };
@@ -17,7 +24,6 @@ const index = () => {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    flexDirection: 'row',
     justifyContent: 'space-between',
     paddingHorizontal: Padding.paddingHorizontal,
     paddingVertical: Padding.paddingVertical,
