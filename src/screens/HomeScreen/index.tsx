@@ -10,8 +10,8 @@ const index = () => {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <PlayCard />
-        <PlayCard />
+        <PlayCard playType="Bullet" playMinute={1} />
+        <PlayCard playType="Blitz" playMinute={3} />
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <CustomButton buttonTitle="CUSTOM" />

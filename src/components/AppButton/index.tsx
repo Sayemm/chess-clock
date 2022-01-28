@@ -22,9 +22,9 @@ const CustomButton: React.FC<props> = ({buttonTitle}) => {
 
 const styles = StyleSheet.create({
   container: {
-    height: hp(7),
+    height: hp(6),
     width: hp(24),
-    backgroundColor: Colors.blue0,
+    backgroundColor: Colors.green0,
     borderWidth: wp(0.5),
     borderRadius: wp(3),
     borderColor: Colors.light0,
