@@ -1,8 +1,8 @@
 import React from 'react';
-import {HomeScreen} from './src/screens';
+import {ReduxScreen} from './src/screens';
 
 const App = () => {
-  return <HomeScreen />;
+  return <ReduxScreen />;
 };
 
 export default App;
