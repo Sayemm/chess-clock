@@ -6,12 +6,20 @@ import {CustomButton, PlayCard} from '../../components';
 import Colors from '../../config/Colors';
 import Padding from '../../config/Padding';
 
-const index = () => {
+const HomeScreen = ({navigation}: {navigation: any}) => {
   return (
     <View style={styles.container}>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
-        <PlayCard playType="Bullet" playMinute={1} />
-        <PlayCard playType="Blitz" playMinute={3} />
+        <PlayCard
+          onPress={() => navigation.navigate('GameScreen')}
+          playType="Bullet"
+          playMinute={1}
+        />
+        <PlayCard
+          onPress={() => navigation.navigate('GameScreen')}
+          playType="Blitz"
+          playMinute={3}
+        />
       </View>
       <View style={{flexDirection: 'row', justifyContent: 'space-between'}}>
         <CustomButton buttonTitle="CUSTOM" />
@@ -31,4 +39,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default index;
+export default HomeScreen;

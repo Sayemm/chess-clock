@@ -12,11 +12,12 @@ import Colors from '../../config/Colors';
 interface props {
   playType: string;
   playMinute: number;
+  onPress?: () => void;
 }
 
-const PlayCard: React.FC<props> = ({playType, playMinute}) => {
+const PlayCard: React.FC<props> = ({playType, playMinute, onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Text style={styles.playType}>{playType}</Text>
       <Text style={styles.playMinute}>{playMinute}</Text>
       <Text style={styles.min}>min</Text>

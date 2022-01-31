@@ -10,11 +10,12 @@ import Colors from '../../config/Colors';
 
 interface props {
   buttonTitle: string;
+  onPress?: () => void;
 }
 
-const CustomButton: React.FC<props> = ({buttonTitle}) => {
+const CustomButton: React.FC<props> = ({buttonTitle, onPress}) => {
   return (
-    <TouchableOpacity style={styles.container}>
+    <TouchableOpacity onPress={onPress} style={styles.container}>
       <Text style={styles.text}>{buttonTitle}</Text>
     </TouchableOpacity>
   );

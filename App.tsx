@@ -1,8 +1,8 @@
 import React from 'react';
-import {ReduxScreen} from './src/screens';
+import Navigation from './src/navigation';
 
 const App = () => {
-  return <ReduxScreen />;
+  return <Navigation />;
 };
 
 export default App;
