@@ -1,34 +1,37 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Text, View} from 'react-native';
 import {RFValue} from 'react-native-responsive-fontsize';
 import {CustomButton} from '../../components';
-import {useDispatch} from 'react-redux';
+import {useDispatch, useSelector} from 'react-redux';
 import {bindActionCreators} from 'redux';
-import {actionCreators} from '../../state';
+import {actionCreators, State} from '../../state';
 
 const GameScreen = () => {
-  const [counter, SetCounter] = useState(0);
-  const onPress1 = () => {
-    SetCounter(counter + 1);
-  };
-  const onPress2 = () => {
-    SetCounter(counter - 1);
-  };
-  const onPress3 = () => {
-    SetCounter(0);
-  };
+  // const [counter, SetCounter] = useState(0);
+  // const onPress1 = () => {
+  //   SetCounter(counter + 1);
+  // };
+  // const onPress2 = () => {
+  //   SetCounter(counter - 1);
+  // };
+  // const onPress3 = () => {
+  //   SetCounter(0);
+  // };
 
   const disPatch = useDispatch();
   const {depositMoney, withdrawMoney, bankruptMoney} = bindActionCreators(
     actionCreators,
     disPatch,
   );
+
+  const amount = useSelector((state: State) => state.bank);
+
   return (
     <View>
-      <Text style={{fontSize: RFValue(80)}}>{counter}</Text>
-      <CustomButton onPress={onPress1} buttonTitle="Diposit" />
-      <CustomButton onPress={onPress2} buttonTitle="Withdraw" />
-      <CustomButton onPress={onPress3} buttonTitle="Bankrupt" />
+      <Text style={{fontSize: RFValue(80)}}>{amount}</Text>
+      <CustomButton onPress={() => depositMoney(1000)} buttonTitle="Diposit" />
+      <CustomButton onPress={() => withdrawMoney(500)} buttonTitle="Withdraw" />
+      <CustomButton onPress={() => bankruptMoney()} buttonTitle="Bankrupt" />
     </View>
   );
 };

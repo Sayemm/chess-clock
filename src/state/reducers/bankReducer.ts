@@ -1,4 +1,4 @@
-import {ActionType} from '../action-types';
+import {ActionType} from '../action-types/index';
 import {Action} from '../actions';
 
 const initialState = 0;
